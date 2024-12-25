@@ -1,4 +1,6 @@
-[
-    { "id": "1", "name": "Nasi Goreng", "ingredients": ["Nasi", "Telur", "Bawang"] },
-    { "id": "2", "name": "Mie Goreng", "ingredients": ["Mie", "Sayur", "Kecap"] }
-]
+{
+    "recipes": [
+        { "id": "1", "name": "Nasi Goreng", "ingredients": ["Nasi", "Telur", "Bawang"] },
+        { "id": "2", "name": "Mie Goreng", "ingredients": ["Mie", "Sayur", "Kecap"] }
+    ]
+}
