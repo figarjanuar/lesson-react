@@ -1,5 +1,5 @@
 import IngredientContext, { Ingredient, IngredientContextType } from "@/contexts/ingredient-context"
-import { ReactNode, useEffect, useState } from "react"
+import { ReactNode, useCallback, useEffect, useState } from "react"
 
 type IngredientProviderType = {
   children: ReactNode
@@ -48,10 +48,20 @@ export default function IngredientProvider({ children }: IngredientProviderType)
     setIngredients(ingredients.filter((data) => data.id !== id))
   }
 
+  const memoAddIngredient = useCallback((name: string) => {
+    handleAddIngridient(name)
+  }, [handleAddIngridient])
+
+  const memoDeleteIngredient = useCallback((id: string) => {
+    handleDeleteIngredient(id)
+  }, [handleDeleteIngredient])
+
   const contextValue: IngredientContextType = {
     ingredients, 
     handleAddIngridient,
-    handleDeleteIngredient
+    handleDeleteIngredient,
+    memoAddIngredient,
+    memoDeleteIngredient
   }
 
   return (
