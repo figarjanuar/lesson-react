@@ -1,0 +1,1 @@
+export { default as recipeService } from "./services/recipe-service";

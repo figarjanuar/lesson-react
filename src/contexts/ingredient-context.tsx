@@ -9,12 +9,16 @@ export type IngredientContextType = {
   ingredients: Ingredient[];
   handleAddIngridient: (name: string) => void;
   handleDeleteIngredient: (id: string) => void;
+  memoAddIngredient: (name: string) => void;
+  memoDeleteIngredient: (id: string) => void;
 }
 
 const IngredientContext = createContext<IngredientContextType>({
   ingredients: [],
   handleAddIngridient: () => {},
-  handleDeleteIngredient: () => {}
+  handleDeleteIngredient: () => {},
+  memoAddIngredient: () => {},
+  memoDeleteIngredient: () => {}
 })
 
 export default IngredientContext
